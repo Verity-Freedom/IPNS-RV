@@ -1,4 +1,4 @@
-cd /d %~dp0
+cd /d "%~dp0"
 (
 echo @echo off
 echo curl.exe https://ipfs.io/ipns/link/file.zip -O

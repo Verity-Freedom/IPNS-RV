@@ -5,5 +5,5 @@ rm -r *
 curl https://ipfs.io/ipns/link/file.zip -O
 unzip ./file.zip
 rm ./file.zip
-cp -r ~/user-config ./user-config
+cp -r ~/user-config ./
 rm -r ~/user-config

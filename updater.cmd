@@ -1,6 +1,6 @@
 cd /d "%~dp0"
 (
-echo curl.exe https://ipfs.io/ipns/link/file.zip -O
+echo curl.exe "https://ipfs.io/ipns/link/file.zip" -O
 echo tar -xf "%CD%\file.zip"
 echo del "%CD%\file.zip"
 echo xcopy "%userprofile%\data" "%CD%\data" /i /e

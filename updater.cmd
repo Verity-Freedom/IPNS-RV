@@ -6,8 +6,7 @@ echo exit
 ) > "%userprofile%\updater.cmd"
 (
 (
-cmd /u /c echo set objShell = CreateObject("Shell.Application"^)
-cmd /u /c echo objShell.NameSpace("%CD%"^).CopyHere(objShell.NameSpace("%CD%\file.zip"^).items^)
+cmd /u /c echo CreateObject("Shell.Application"^).NameSpace("%CD%"^).CopyHere(CreateObject("Shell.Application"^).NameSpace("%CD%\file.zip"^).items^)
 cmd /u /c echo CreateObject("WScript.Shell"^).Run "%userprofile%\cleaner.cmd"
 ) > "%userprofile%\extractor.vbs"
 (

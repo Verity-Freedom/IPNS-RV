@@ -1,16 +1,16 @@
 cd /d "%~dp0"
-if "%CD:~-1%" == "\" (set "DIR=%CD:~0,-1%") else set "DIR=%CD%"
+if "%CD:~-1%" == "\" (set "EXT=%CD:~0,-1%") else set "EXT=%CD%"
 (
-echo powershell -Command "(New-Object Net.WebClient).DownloadFile('https://ipfs.io/ipns/link/file.zip', '%DIR%\file.zip')"
-echo call "%userprofile%\extractor.vbs"
+echo powershell -Command "(New-Object Net.WebClient).DownloadFile('https://ipfs.io/ipns/link/file.zip', '%EXT%\file.zip')"
+echo cscript "%userprofile%\extractor.vbs"
 echo exit
 )>"%userprofile%\updater.cmd"
 (
-cmd /u /c echo CreateObject("Shell.Application"^).NameSpace("%CD%"^).CopyHere(CreateObject("Shell.Application"^).NameSpace("%DIR%\file.zip"^).items^)
+cmd /u /c echo CreateObject("Shell.Application"^).NameSpace("%CD%"^).CopyHere(CreateObject("Shell.Application"^).NameSpace("%EXT%\file.zip"^).items^)
 cmd /u /c echo CreateObject("WScript.Shell"^).Run "%userprofile%\cleaner.cmd"
 )>"%userprofile%\extractor.vbs"
 (
-echo del "%DIR%\file.zip"
+echo del "%EXT%\file.zip"
 echo xcopy "%userprofile%\data" "%CD%\data" /i /e
 echo rmdir "%userprofile%\data" /s /q
 echo cmd /c del "%userprofile%\updater.cmd"

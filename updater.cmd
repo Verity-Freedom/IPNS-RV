@@ -13,9 +13,9 @@ cmd /u /c echo CreateObject("WScript.Shell"^).Run "%temp%\cleaner.cmd"
 echo del "%WAY%\file.zip"
 echo xcopy "%temp%\data" "%CD%\data" /i /e
 echo rmdir "%temp%\data" /s /q
-echo cmd /c del "%temp%\updater.cmd"
-echo cmd /c del "%temp%\extractor.vbs"
-echo cmd /c del "%temp%\cleaner.cmd"
+echo del "%temp%\updater.cmd"
+echo del "%temp%\extractor.vbs"
+echo del "%temp%\cleaner.cmd"
 )>"%temp%\cleaner.cmd"
 xcopy "%CD%\data" "%temp%\data" /i /e
 start "" "%temp%\updater.cmd"

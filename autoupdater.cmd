@@ -1,4 +1,5 @@
 @echo off
+cd /d "%~dp0"
 setlocal EnableDelayedExpansion
 for %%I in (VERSION*) do set "UPD=%%~nxI"
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://ipfs.io/ipns/k51qzi5uqu5dldod6robuflgitvj276br0xye3adipm3kc0bh17hfiv1e0hnp4/%UPD%', '%temp%\%UPD%')" >nul
@@ -8,8 +9,8 @@ if !errorlevel! EQU 2 GOTO Skip
 echo @echo off>"%temp%\autoupdater.cmd"
 echo call "%CD%\updater.cmd">>"%temp%\autoupdater.cmd"
 echo cls>>"%temp%\autoupdater.cmd"
-echo echo If you see this message, then the automatic update is most likely successful. You can wait or press any button to start the program.>>"%temp%\autoupdater.cmd"
-echo timeout /t 15>>"%temp%\autoupdater.cmd"
+echo :Wait>>"%temp%\autoupdater.cmd"
+echo if not exist "%CD%\file.any" GOTO Wait>>"%temp%\autoupdater.cmd"
 echo call "%CD%\program.exe">>"%temp%\autoupdater.cmd"
 echo del "%temp%\autoupdater.cmd" ^& exit>>"%temp%\autoupdater.cmd"
 start "" "%temp%\autoupdater.cmd"

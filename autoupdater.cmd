@@ -1,4 +1,3 @@
-@echo off
 cd /d "%~dp0"
 setlocal EnableDelayedExpansion
 for %%I in (VERSION*) do set "UPD=%%~nxI"

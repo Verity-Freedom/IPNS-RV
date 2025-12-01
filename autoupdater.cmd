@@ -4,7 +4,7 @@ if %errorlevel% NEQ 0 (
 echo call "%CD%\updater.cmd">"%temp%\autoupdater.cmd"
 echo timeout /t 15>>"%temp%\autoupdater.cmd"
 echo call "%CD%\program.exe">>"%temp%\autoupdater.cmd"
-echo cmd /c del "%temp%\autoupdater.cmd">>"%temp%\autoupdater.cmd"
+echo del "%temp%\autoupdater.cmd">>"%temp%\autoupdater.cmd"
 call "%temp%\autoupdater.cmd"
 ) else (
 del "%temp%\%UPD%"

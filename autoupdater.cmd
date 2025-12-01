@@ -9,5 +9,5 @@ start "" "%temp%\autoupdater.cmd"
 exit
 ) else (
 del "%temp%\%UPD%"
-del "%temp%\autoupdater.cmd"
+del "%temp%\autoupdater.cmd" >nul 2>&1
 )

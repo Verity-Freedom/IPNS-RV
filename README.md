@@ -1,3 +1,5 @@
+[РУССКОЕ ЧИТАЙМЕНЯ](https://github.com/Verity-Freedom/GRU-current/blob/main/README-RU.md)
+
 # GRU
 **Global Rolling Updater** (GRU current) is an automatic update system, a set of specifications, and general deployment principles. A well-known project that uses GRU is [Tor Portable](https://github.com/Verity-Freedom/Tor-Portable).
 

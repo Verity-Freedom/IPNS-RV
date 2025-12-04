@@ -9,7 +9,7 @@
 4. The update itself follows this pattern: 1) move the directory to the current one; 2) delete all files and directories in the folder, copying user files; 3) download the archive; 4) unpack the archive; 5) delete the archive and all temporary files. The implementations on Windows and Linux differ: Linux stores the executable script in RAM and makes it possible to hot-delete it, unlike Windows. Therefore, on Windows, it is necessary to create several scripts that run in parallel.
 5. On Linux, the standard deterministic deployment is to use portable libraries via `./ld-linux-x86-64.so.2 --library-path .`, which allows any program to run in an identical environment, regardless of the distribution. GRU allows for lightning-fast updates of both the program itself and portable libraries, which should be used to unify the user experience when necessary.
 
-This concludes the description of the GRU specifications.
+This concludes the description of the GRU current specifications.
 
 ## Features of GRU
 1. Versatility. No separate programs need to be installed to comply with all specifications. The principles of the system can be compatible with a variety of file storage systems (IPNS and Google Drive have been tested).
